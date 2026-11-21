@@ -26,7 +26,7 @@ label>*{width:100%}.big{font-size:26px;font-weight:700;color:var(--gold)}.mut{co
 </main>
 <script>
 var T={en:{rates:"Rates",calc:"Calculator",jew:"Jewellers",fc:"Forecast",alerts:"Alerts",
-rateTitle:"Kochi gold rate",enter:"Enter today’s 24K rate (₹ per gram)",liveT:"International market",par:"Indicative 24K parity (₹/g)",parN:"Spot gold × USD/INR ÷ 31.1035. Excludes import duty, GST, premiums and jeweller margins, so it is NOT the Kochi retail rate.",usePar:"Use as 24K rate",upd:"Retrieved",fail:"Live feed unavailable. Enter a rate manually.",load:"Loading…",enterHint:"No live feed is connected, so no price is shown until you enter one from a source you trust.",
+rateTitle:"Kochi gold rate",enter:"Enter today’s 24K rate (₹ per gram)",liveT:"International market",par:"Indicative 24K parity (₹/g)",parN:"Spot gold in ₹ per ounce ÷ 31.1035. Excludes import duty, GST, premiums and jeweller margins, so it is NOT the Kochi retail rate.",usePar:"Use as 24K rate",upd:"Retrieved",fail:"Live feed unavailable. Enter a rate manually.",load:"Loading…",enterHint:"No live feed is connected, so no price is shown until you enter one from a source you trust.",
 st:"SOURCE UNAVAILABLE",per:"per",purity:"Purity",unit:"Unit",weight:"Weight",making:"Making charge %",wast:"Wastage %",gst:"GST %",
 gold:"Base gold value",mk:"Making charge",wa:"Wastage",pre:"Cost before tax",gt:"Estimated GST",fin:"Estimated final price",pg:"Per gram (final)",pp:"Per pavan (final)",
 disc:"Estimate only, not a jeweller invoice. Retail 22K is approximated as 24K × 916/999. Jewellers’ own quotes may differ. GST 3% on gold plus making is a common assumption; verify current rules.",
@@ -75,20 +75,19 @@ else if(b.id==="asave"){var p=parseFloat(document.getElementById("aprice").value
 function saveA(){try{localStorage.setItem("gi_alerts",JSON.stringify(S.alerts))}catch(e){}}
 document.addEventListener("input",function(e){var i=e.target.id;if(i in S&&i!=="tab"&&i!=="lang"){S[i]=e.target.value;var pos=e.target.selectionStart;draw();var n=document.getElementById(i);if(n&&n.tagName==="INPUT"){n.focus();try{n.setSelectionRange(pos,pos)}catch(x){}}}});
 document.getElementById("lang").addEventListener("change",function(e){S.lang=e.target.value;try{localStorage.setItem("gi_lang",S.lang)}catch(x){}draw()});
-var L={xau:null,inr:null,got:null,err:false};
+var L={xau:null,inr:1,got:null,err:false};
 function parity(){return L.xau&&L.inr?L.xau/31.1035*L.inr:NaN}
 function liveHTML(){var st=L.err?(L.xau&&L.inr?"STALE":"SOURCE UNAVAILABLE"):(L.got?"LIVE":t("load"));
 var h='<h2>'+t("liveT")+' <span class="badge'+(L.err?' bad':'')+'">'+st+'</span></h2>';
-if(L.xau)h+='<div class="row"><span>XAU/USD (oz)</span><b>$'+L.xau.toLocaleString("en-US",{maximumFractionDigits:2})+'</b></div>';
-if(L.inr)h+='<div class="row"><span>USD/INR</span><b>'+L.inr.toFixed(2)+'</b></div>';
-if(L.xau&&L.inr){h+='<div class="row"><span>'+t("par")+'</span><b>'+inr(parity())+'</b></div><p class="mut">'+t("parN")+'</p><button id="usepar" class="ghost">'+t("usePar")+'</button>'}
-if(L.err)h+='<p class="mut">'+t("fail")+'</p>';
-if(L.got)h+='<p class="mut">'+t("upd")+': '+L.got.toLocaleTimeString()+' · gold-api.com, open.er-api.com</p>';
+if(L.xau)h+='<div class="row"><span>Gold 24K (₹ per troy oz)</span><b>'+inr(L.xau)+'</b></div>';
+
+if(L.xau){var q=parity();h+='<div class="row"><span>24K / g</span><b>'+inr(q)+'</b></div><div class="row"><span>22K / g</span><b>'+inr(q*916/999)+'</b></div><div class="row"><span>22K / 8 g pavan</span><b>'+inr(q*916/999*8)+'</b></div><div class="row"><span>18K / g</span><b>'+inr(q*750/999)+'</b></div><div class="row"><span>14K / g</span><b>'+inr(q*585/999)+'</b></div><p class="mut">'+t("parN")+'</p><button id="usepar" class="ghost">'+t("usePar")+'</button>'}
+if(L.err)h+='<p class="mut">'+t("fail")+(L.msg&&L.msg.length?' ['+L.msg.join('; ')+']':'')+'</p>';
+if(L.got)h+='<p class="mut">'+t("upd")+': '+L.got.toLocaleTimeString()+' · gold-api.com / goldapi.io</p>';
 return h}
 async function load(){var a=0,b=0;
-try{var r=await fetch("https://api.gold-api.com/price/XAU");var j=await r.json();if(!(j.price>0))throw 0;L.xau=j.price;a=1}catch(e){}
-try{var r2=await fetch("https://open.er-api.com/v6/latest/USD");var k=await r2.json();if(!(k.rates&&k.rates.INR>0))throw 0;L.inr=k.rates.INR;b=1}catch(e){}
-L.err=!(a&&b);if(a&&b)L.got=new Date();
+var U=["https://api.gold-api.com/price/XAU/INR","https://www.goldapi.io/api/static/XAU/INR"];L.msg=[];for(var i=0;i<U.length&&!a;i++){try{var r=await fetch(U[i]);var j=await r.json();if(!(j.price>0))throw new Error("no price in reply");L.xau=j.price;a=1}catch(e){L.msg.push(U[i].split("/")[2]+": "+e.message)}}
+b=1;L.err=!(a&&b);if(a&&b)L.got=new Date();
 var el=document.getElementById("live");if(el)el.innerHTML=liveHTML()}
 setInterval(load,60000);load();
 draw();
