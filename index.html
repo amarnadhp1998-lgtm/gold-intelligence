@@ -26,7 +26,7 @@ label>*{width:100%}.big{font-size:26px;font-weight:700;color:var(--gold)}.mut{co
 </main>
 <script>
 var T={en:{rates:"Rates",calc:"Calculator",jew:"Jewellers",fc:"Forecast",alerts:"Alerts",
-rateTitle:"Kochi gold rate",enter:"Enter today’s 24K rate (₹ per gram)",liveT:"International market",par:"Indicative 24K parity (₹/g)",parN:"Spot gold in ₹ per ounce ÷ 31.1035. Excludes import duty, GST, premiums and jeweller margins, so it is NOT the Kochi retail rate.",usePar:"Use as 24K rate",upd:"Retrieved",fail:"Live feed unavailable. Enter a rate manually.",load:"Loading…",enterHint:"No live feed is connected, so no price is shown until you enter one from a source you trust.",
+rateTitle:"Kochi gold rate",enter:"Enter today’s 24K rate (₹ per gram)",liveT:"International market",par:"Indicative 24K parity (₹/g)",parN:"Spot gold in ₹ per ounce ÷ 31.1035. Excludes import duty, GST, premiums and jeweller margins, so it is NOT the Kochi retail rate.",usePar:"Use as 24K rate",upd:"Retrieved",fail:"Live feed unavailable. Enter a rate manually.",load:"Loading…",enterHint:"Showing international gold converted to ₹ as an indicative price. Type a rate from a Kochi source to replace it.",
 st:"SOURCE UNAVAILABLE",per:"per",purity:"Purity",unit:"Unit",weight:"Weight",making:"Making charge %",wast:"Wastage %",gst:"GST %",
 gold:"Base gold value",mk:"Making charge",wa:"Wastage",pre:"Cost before tax",gt:"Estimated GST",fin:"Estimated final price",pg:"Per gram (final)",pp:"Per pavan (final)",
 disc:"Estimate only, not a jeweller invoice. Retail 22K is approximated as 24K × 916/999. Jewellers’ own quotes may differ. GST 3% on gold plus making is a common assumption; verify current rules.",
@@ -34,7 +34,7 @@ src:"Data sources",name:"Source",status:"Status",nc:"Not configured",unav:"Unava
 fcOff:"Forecasting is disabled",fcWhy:"A forecast needs verified historical series (XAU/USD, USD/INR, MCX, IBJA, Kochi retail) and walk-forward validation that beats a naive baseline. None of that data exists yet, so no prediction, confidence or BUY/WAIT signal is shown.",
 newA:"New alert",dir:"Condition",below:"falls below",above:"rises above",price:"₹ per pavan (22K)",save:"Save alert",none:"No alerts yet.",anote:"Saved in this browser only. No notification provider is configured, so nothing is sent.",del:"Delete",demo:"Calculator values are your own inputs, not market data."},
 ml:{rates:"നിരക്ക്",calc:"കാൽക്കുലേറ്റർ",jew:"ജ്വല്ലറികൾ",fc:"പ്രവചനം",alerts:"അലേർട്ടുകൾ",
-rateTitle:"കൊച്ചി സ്വർണ്ണ വില",enter:"ഇന്നത്തെ 24K വില നൽകുക (ഗ്രാമിന് ₹)",liveT:"അന്താരാഷ്ട്ര വിപണി",par:"ഏകദേശ 24K തുല്യവില (₹/ഗ്രാം)",parN:"സ്പോട്ട് സ്വർണ്ണം × USD/INR ÷ 31.1035. ഇറക്കുമതി ചുങ്കം, ജിഎസ്ടി, പ്രീമിയം, ജ്വല്ലറി മാർജിൻ എന്നിവ ഉൾപ്പെടുന്നില്ല, അതിനാൽ ഇത് കൊച്ചിയിലെ റീട്ടെയിൽ വില അല്ല.",usePar:"24K വിലയായി ഉപയോഗിക്കുക",upd:"ശേഖരിച്ചത്",fail:"ലൈവ് ഫീഡ് ലഭ്യമല്ല. വില സ്വയം നൽകുക.",load:"ലോഡ് ചെയ്യുന്നു…",enterHint:"ലൈവ് ഫീഡ് ബന്ധിപ്പിച്ചിട്ടില്ല, അതിനാൽ നിങ്ങൾ വില നൽകുംവരെ ഒന്നും കാണിക്കില്ല.",
+rateTitle:"കൊച്ചി സ്വർണ്ണ വില",enter:"ഇന്നത്തെ 24K വില നൽകുക (ഗ്രാമിന് ₹)",liveT:"അന്താരാഷ്ട്ര വിപണി",par:"ഏകദേശ 24K തുല്യവില (₹/ഗ്രാം)",parN:"സ്പോട്ട് സ്വർണ്ണം × USD/INR ÷ 31.1035. ഇറക്കുമതി ചുങ്കം, ജിഎസ്ടി, പ്രീമിയം, ജ്വല്ലറി മാർജിൻ എന്നിവ ഉൾപ്പെടുന്നില്ല, അതിനാൽ ഇത് കൊച്ചിയിലെ റീട്ടെയിൽ വില അല്ല.",usePar:"24K വിലയായി ഉപയോഗിക്കുക",upd:"ശേഖരിച്ചത്",fail:"ലൈവ് ഫീഡ് ലഭ്യമല്ല. വില സ്വയം നൽകുക.",load:"ലോഡ് ചെയ്യുന്നു…",enterHint:"അന്താരാഷ്ട്ര സ്വർണ്ണവില രൂപയിലാക്കി ഏകദേശ വിലയായി കാണിക്കുന്നു. കൊച്ചിയിലെ വില നൽകിയാൽ അത് മാറും.",
 st:"ഉറവിടം ലഭ്യമല്ല",per:"ഒന്നിന്",purity:"ശുദ്ധി",unit:"യൂണിറ്റ്",weight:"തൂക്കം",making:"പണിക്കൂലി %",wast:"പണിക്കുറവ് %",gst:"ജിഎസ്ടി %",
 gold:"സ്വർണ്ണത്തിന്റെ വില",mk:"പണിക്കൂലി",wa:"പണിക്കുറവ്",pre:"നികുതിക്ക് മുമ്പുള്ള തുക",gt:"ഏകദേശ ജിഎസ്ടി",fin:"ഏകദേശ അന്തിമ വില",pg:"ഗ്രാമിന് (അന്തിമം)",pp:"പവന് (അന്തിമം)",
 disc:"ഇത് ഏകദേശ കണക്ക് മാത്രമാണ്, ജ്വല്ലറി ബില്ല് അല്ല. 22K വില 24K × 916/999 ആയി കണക്കാക്കുന്നു. ജ്വല്ലറികളുടെ വില വ്യത്യാസപ്പെടാം. സ്വർണ്ണത്തിനും പണിക്കൂലിക്കും 3% ജിഎസ്ടി സാധാരണ അനുമാനമാണ്; നിലവിലെ നിയമം പരിശോധിക്കുക.",
@@ -47,12 +47,22 @@ try{var l=localStorage.getItem("gi_lang");if(l)S.lang=l;var a=localStorage.getIt
 function t(k){return T[S.lang][k]}
 function inr(n){return isFinite(n)?"₹"+n.toLocaleString("en-IN",{maximumFractionDigits:2}):"—"}
 function opts(o,v){return Object.keys(o).map(function(k){return"<option"+(k===v?" selected":"")+">"+k+"</option>"}).join("")}
-function perGram(p){var r=parseFloat(S.rate);return r>0?r*PUR[p]/999:NaN}
-function rates(){var h='<div class="card" id="live">'+liveHTML()+'</div><div class="card"><h2>'+t("rateTitle")+' <span class="badge bad">'+(parseFloat(S.rate)>0?"USER-ENTERED":t("st"))+'</span></h2><label>'+t("enter")+'<input id="rate" type="number" inputmode="decimal" min="0" value="'+S.rate+'"></label><p class="mut">'+t("enterHint")+'</p>';
-h+='<div class="grid" style="margin-top:8px">';["22K","24K","18K","14K"].forEach(function(p){var g=perGram(p);h+='<div><div class="mut">'+p+' / g</div><div class="big">'+inr(g)+'</div>'+(p==="22K"?'<div class="mut">'+inr(g*8)+' / '+(S.lang==="ml"?"പവൻ":"pavan")+'</div>':'')+'</div>'});
-h+='</div><p class="mut">'+t("disc")+'</p></div>';
+function perGram(p){var r=parseFloat(S.rate);if(!(r>0))r=parity();return r>0?r*PUR[p]/999:NaN}
+function rates(){var man=parseFloat(S.rate)>0,ml=S.lang==="ml",par=parity()>0;
+var badge=man?"USER-ENTERED":(par?(L.err?"STALE":"INDICATIVE"):t("st"));
+var title=man?t("rateTitle"):(ml?"സ്വർണ്ണ വില (അന്താരാഷ്ട്രം, ₹)":"Gold rate (international, in ₹)");
+var h='<div class="card"><h2>'+title+' <span class="badge'+((man||(par&&!L.err))?'':' bad')+'">'+badge+'</span></h2>';
+var src=man?(ml?"ഉറവിടം: നിങ്ങൾ നൽകിയത്":"Source: entered by you"):(L.xau&&L.got?"Source: gold-api.com / goldapi.io, international spot gold converted to ₹. Retrieved "+L.got.toLocaleTimeString():t("fail")+(L.msg&&L.msg.length?" ["+L.msg.join("; ")+"]":""));
+h+='<p class="mut" style="margin-top:0">'+src+'</p>';
+function big(p){var g=perGram(p);return '<div class="card" style="margin:0"><div class="mut">'+p+' '+(ml?"സ്വർണ്ണം":"gold")+'</div><div class="big">'+inr(g)+'</div><div class="mut">'+(ml?"ഗ്രാമിന്":"per gram")+'</div><div class="big" style="font-size:22px;margin-top:8px">'+inr(g*8)+'</div><div class="mut">'+(ml?"8 ഗ്രാം (1 പവൻ)":"per 8 g (1 pavan)")+'</div></div>'}
+h+='<div class="grid" style="margin:10px 0">'+big("24K")+big("22K")+'</div>';
+h+='<div class="scroll"><table><tr><th></th><th>'+(ml?"ഗ്രാമിന്":"per g")+'</th><th>'+(ml?"8 ഗ്രാം":"per 8 g")+'</th></tr>';
+["18K","14K"].forEach(function(p){var g=perGram(p);h+='<tr><td>'+p+'</td><td>'+inr(g)+'</td><td>'+inr(g*8)+'</td></tr>'});
+h+='</table></div><p class="mut">'+t("parN")+'</p></div>';
+h+='<div class="card"><label>'+t("enter")+'<input id="rate" type="number" inputmode="decimal" value="'+S.rate+'"></label><p class="mut">'+t("enterHint")+'</p>'+(man?'<button class="ghost" id="clr">Clear</button>':'')+'<p class="mut">'+t("disc")+'</p></div>';
 h+='<div class="card"><h2>'+t("src")+'</h2><div class="scroll"><table><tr><th>'+t("name")+'</th><th>'+t("status")+'</th></tr>';
-["IBJA","MCX","AKGSMA","XAU/USD","USD/INR"].forEach(function(s){h+='<tr><td>'+s+'</td><td><span class="badge bad">'+t("nc")+'</span></td></tr>'});
+h+='<tr><td>gold-api.com / goldapi.io</td><td><span class="badge'+(L.xau&&!L.err?'':' bad')+'">'+(L.xau?(L.err?"STALE":"LIVE"):t("st"))+'</span></td></tr>';
+["IBJA","MCX","AKGSMA"].forEach(function(x){h+='<tr><td>'+x+'</td><td><span class="badge bad">'+t("nc")+'</span></td></tr>'});
 return h+'</table></div></div>'}
 function calc(){var h='<div class="card"><h2>'+t("calc")+'</h2><div class="grid"><label>'+t("enter")+'<input id="rate" type="number" inputmode="decimal" value="'+S.rate+'"></label><label>'+t("purity")+'<select id="pur">'+opts(PUR,S.pur)+'</select></label><label>'+t("weight")+'<input id="w" type="number" inputmode="decimal" value="'+S.w+'"></label><label>'+t("unit")+'<select id="uni">'+opts(UNI,S.uni)+'</select></label><label>'+t("making")+'<input id="mk" type="number" inputmode="decimal" value="'+S.mk+'"></label><label>'+t("wast")+'<input id="wa" type="number" inputmode="decimal" value="'+S.wa+'"></label><label>'+t("gst")+'<input id="gst" type="number" inputmode="decimal" value="'+S.gst+'"></label></div></div>';
 var g=perGram(S.pur),grams=(parseFloat(S.w)||0)*UNI[S.uni],base=g*grams,mk=base*(parseFloat(S.mk)||0)/100,wa=base*(parseFloat(S.wa)||0)/100,pre=base+mk+wa,gs=pre*(parseFloat(S.gst)||0)/100,fin=pre+gs;
@@ -70,7 +80,7 @@ document.getElementById("tabs").innerHTML=tabs.map(function(k){return'<button da
 document.getElementById("view").innerHTML={rates:rates,calc:calc,jew:jew,fc:fc,alerts:al}[S.tab]()}
 document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
 if(b.dataset.tab){S.tab=b.dataset.tab;draw()}
-else if(b.id==="usepar"){S.rate=String(Math.round(parity()*100)/100);draw()}else if(b.dataset.del){S.alerts.splice(+b.dataset.del,1);saveA();draw()}
+else if(b.id==="usepar"){S.rate=String(Math.round(parity()*100)/100);draw()}else if(b.id==="clr"){S.rate="";draw()}else if(b.dataset.del){S.alerts.splice(+b.dataset.del,1);saveA();draw()}
 else if(b.id==="asave"){var p=parseFloat(document.getElementById("aprice").value);if(p>0){S.alerts.push({d:document.getElementById("adir").value,p:p});saveA();draw()}}});
 function saveA(){try{localStorage.setItem("gi_alerts",JSON.stringify(S.alerts))}catch(e){}}
 document.addEventListener("input",function(e){var i=e.target.id;if(i in S&&i!=="tab"&&i!=="lang"){S[i]=e.target.value;var pos=e.target.selectionStart;draw();var n=document.getElementById(i);if(n&&n.tagName==="INPUT"){n.focus();try{n.setSelectionRange(pos,pos)}catch(x){}}}});
@@ -88,7 +98,7 @@ return h}
 async function load(){var a=0,b=0;
 var U=["https://api.gold-api.com/price/XAU/INR","https://www.goldapi.io/api/static/XAU/INR"];L.msg=[];for(var i=0;i<U.length&&!a;i++){try{var r=await fetch(U[i]);var j=await r.json();if(!(j.price>0))throw new Error("no price in reply");L.xau=j.price;a=1}catch(e){L.msg.push(U[i].split("/")[2]+": "+e.message)}}
 b=1;L.err=!(a&&b);if(a&&b)L.got=new Date();
-var el=document.getElementById("live");if(el)el.innerHTML=liveHTML()}
+if(S.tab==="rates"&&document.activeElement.tagName!=="INPUT")draw();else{var el=document.getElementById("live");if(el)el.innerHTML=liveHTML()}}
 setInterval(load,60000);load();
 draw();
 </script></body></html>
